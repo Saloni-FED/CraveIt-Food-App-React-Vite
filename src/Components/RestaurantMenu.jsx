@@ -1,23 +1,14 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { CDN_IMG_URL } from "./constant";
+import useRestaurant from "../../utils/useRestaurant";
 const RestaurantMenu = () => {
-  const [MenuRestaurant, setMenuRestaurant] = useState([]);
-  const [DishName , setDishName] = useState([])
+  // const [MenuRestaurant, setMenuRestaurant] = useState([]);
+  // const [DishName , setDishName] = useState([])
   let params = useParams();
-  useEffect(() => {
-    menuList();
-  }, []);
-  async function menuList() {
-    let menuData = await fetch(
-      "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=22.517929&lng=88.38341199999999&restaurantId="+ params.id
-    );
-    let menuList = await menuData.json();
-    
-    setDishName(menuList?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards)
-    setMenuRestaurant(menuList?.data?.cards[0]?.card?.card?.info);
-  }
-  return (
+  const [MenuRestaurant,DishName] = useRestaurant(params.id)
+  
+  return (!MenuRestaurant || !DishName ) ? <h1>Wait for a moment.....</h1> :(
     <div className="menu">
       <div className="list">
       <h1>Menu</h1>
@@ -27,8 +18,8 @@ const RestaurantMenu = () => {
       <h2>{MenuRestaurant?.city}</h2>
       </div>
       <div className="menuList">
-       {DishName.map((element)=>{
-        return <p className="menuName">{element?.card?.info?.name}</p>
+       {DishName.map((element,i)=>{
+        return <li className="menuName">{element?.card?.info?.name} key = {element?.card?.info?.id}</li>
       })}
       </div>
     </div>

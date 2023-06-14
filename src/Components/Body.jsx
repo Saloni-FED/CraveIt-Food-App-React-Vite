@@ -2,32 +2,14 @@ import Shimmer from "../Components/Shimmer";
 import { useState, useEffect } from "react";
 import { RestroList } from "./RestroList";
 import { Link } from "react-router-dom";
+import { filterData } from "../../utils/helperFunction";
+import useRestaurantFilter from "../../utils/useRestaurantFilter";
 
-// Creating a filter function
-function filterData(searchText, restaurants) {
-  const restaurantFilter = restaurants.filter((restaurant) => {
-    return restaurant.data.name
-      .toUpperCase()
-      .includes(searchText.toUpperCase());
-  });
-  return restaurantFilter;
-}
 const Body = () => {
-  const [restaurants, setRestaurants] = useState([]);
-  const [filterRestaurant, setFilterRestaurants] = useState([]);
+  // const [restaurants, setRestaurants] = useState([]);
+  // const [filterRestaurant, setFilterRestaurants] = useState([]);
+  const [restaurants, filterRestaurant] = useRestaurantFilter();
   const [searchText, setSearchText] = useState();
-  useEffect(() => {
-    restaurantsAPI();
-  }, []);
-
-  async function restaurantsAPI() {
-    let api = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.3667296&lng=72.819814&page_type=DESKTOP_WEB_LISTING"
-    );
-    let data = await api.json();
-    setRestaurants(data?.data?.cards[2].data?.data?.cards);
-    setFilterRestaurants(data?.data?.cards[2].data?.data?.cards);
-  }
 
   return restaurants?.length == 0 ? (
     <Shimmer />
@@ -46,7 +28,7 @@ const Body = () => {
         onClick={() => {
           // Define a function to filter the restaurant list
           const data = filterData(searchText, restaurants);
-          setFilterRestaurants(data);
+          console.log(data)
         }}
       >
         Search
@@ -55,7 +37,7 @@ const Body = () => {
         <h1>Oops Sorry Match Not found</h1>
       ) : (
         <div className="body-main">
-          {filterRestaurant.map((restro) => {
+          {restaurants.map((restro) => {
             return (
               <Link
                 to={`/restaurantMenu/${restro.data.id}`}
