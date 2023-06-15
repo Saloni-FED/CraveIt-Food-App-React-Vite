@@ -1,4 +1,9 @@
-export function filterData(searchText, restaurants) {
+import { useState } from "react";
+
+const useFilterData = (searchText, restaurants) => {
+  if (searchText.trim() == "") {
+    return restaurants;
+  } else {
     const restaurantFilter = restaurants.filter((restaurant) => {
       return restaurant.data.name
         .toUpperCase()
@@ -6,3 +11,6 @@ export function filterData(searchText, restaurants) {
     });
     return restaurantFilter;
   }
+};
+
+export default useFilterData;

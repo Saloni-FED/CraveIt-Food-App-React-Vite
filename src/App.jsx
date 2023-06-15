@@ -1,4 +1,6 @@
-import { children, useState } from "react";
+import { children } from "react";
+import { lazy, Suspense } from "react";
+
 import HeaderComponent from "./Components/Header";
 import Body from "./Components/Body";
 import "./App.css";
@@ -8,7 +10,14 @@ import Error from "./Components/Error"
 import Contact from "./Components/Contact"
 import RestaurantMenu from "./Components/RestaurantMenu";
 import Profile from './Components/ProfileClass'
+// import Mart from "./Components/Mart"
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+
+// Code Splitting 
+const Mart = lazy(() => import("./Components/Mart"));
+
+
+
 function AppLayout(){
   return <>
   <HeaderComponent />
@@ -43,6 +52,14 @@ export const AppRouter = createBrowserRouter([
       {
         path:"/restaurantMenu/:id",
         element:<RestaurantMenu/>
+      },
+      {
+        path:"/instamart",
+        element:(
+          <Suspense fallback={<h1>Wait for load.......</h1>}>
+            <Mart/>
+          </Suspense>
+        )
       }
     ]
   },

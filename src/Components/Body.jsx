@@ -2,14 +2,18 @@ import Shimmer from "../Components/Shimmer";
 import { useState, useEffect } from "react";
 import { RestroList } from "./RestroList";
 import { Link } from "react-router-dom";
-import { filterData } from "../../utils/helperFunction";
-import useRestaurantFilter from "../../utils/useRestaurantFilter";
+import useFilterData from "../../utils/helperFunction";
+import useFetch from "../../utils/useFetch";
 
 const Body = () => {
-  // const [restaurants, setRestaurants] = useState([]);
-  // const [filterRestaurant, setFilterRestaurants] = useState([]);
-  const [restaurants, filterRestaurant] = useRestaurantFilter();
+  let { restaurants, isRestaurant } = useFetch();
   const [searchText, setSearchText] = useState();
+  const [filterRestaurant, setFilterRestaurants] = useState([]);
+  console.log("Parent Initial Component = " + isRestaurant);
+  useEffect(() => {
+    setFilterRestaurants(restaurants);
+    console.log("Parent useEffect =  " + isRestaurant);
+  }, [restaurants]);
 
   return restaurants?.length == 0 ? (
     <Shimmer />
@@ -26,9 +30,9 @@ const Body = () => {
       <button
         type="search"
         onClick={() => {
-          // Define a function to filter the restaurant list
-          const data = filterData(searchText, restaurants);
-          console.log(data)
+          let data = useFilterData(searchText, restaurants);
+          console.log(data);
+          setFilterRestaurants(data);
         }}
       >
         Search
@@ -37,7 +41,7 @@ const Body = () => {
         <h1>Oops Sorry Match Not found</h1>
       ) : (
         <div className="body-main">
-          {restaurants.map((restro) => {
+          {filterRestaurant.map((restro) => {
             return (
               <Link
                 to={`/restaurantMenu/${restro.data.id}`}

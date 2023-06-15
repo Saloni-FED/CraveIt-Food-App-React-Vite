@@ -29,6 +29,9 @@ const HeaderComponent = () => {
               srcset=""
             />
           </li>
+          <li>
+            <Link to="/instamart">Mart</Link>
+          </li>
         </ul>
         {isLogin ? (
           <button onClick={()=>handleLoginClick(false)}>Login in</button>
