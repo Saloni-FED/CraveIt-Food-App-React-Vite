@@ -1,7 +1,7 @@
 export const RestroList = (props) => {
     return (
       <>
-        <div className="body-card">
+        <div className="w-40 m-2 border-2 box-border ">
           <img
             className="food-img"
             src={

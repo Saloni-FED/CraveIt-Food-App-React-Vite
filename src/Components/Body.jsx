@@ -18,8 +18,9 @@ const Body = () => {
   return restaurants?.length == 0 ? (
     <Shimmer />
   ) : (
-    <>
+    <><div className="flex justify-center py-11  bg-slate-100   ">
       <input
+        className="w-96 p-2 pl-5 shadow-lg bg-white border-none outline-none" 
         type="text"
         placeholder="search"
         value={searchText}
@@ -35,12 +36,13 @@ const Body = () => {
           setFilterRestaurants(data);
         }}
       >
-        Search
+        <span className="ml-2 ">🔍</span>
       </button>
+      </div>
       {filterRestaurant.length == 0 ? (
         <h1>Oops Sorry Match Not found</h1>
       ) : (
-        <div className="body-main">
+        <div className="flex flex-wrap justify-center">
           {filterRestaurant.map((restro) => {
             return (
               <Link
