@@ -42,7 +42,7 @@ const Body = () => {
       {filterRestaurant.length == 0 ? (
         <h1>Oops Sorry Match Not found</h1>
       ) : (
-        <div className="flex flex-wrap justify-center">
+        <div className="grid grid-cols-5 gap-y-4">
           {filterRestaurant.map((restro) => {
             return (
               <Link

@@ -13,6 +13,7 @@ const useRestaurant = (params)=>{
     //  console.log(menuList?.data?.cards[2].groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards)
     //  console.log(menuList?.data?.cards[0]?.card?.card?.info)
      setMenuRestaurant(menuList?.data?.cards[0]?.card?.card?.info)
+    //  console.log(menuList?.data?.cards[2].groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards)
      setDishName(menuList?.data?.cards[2].groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards)
     }
     
