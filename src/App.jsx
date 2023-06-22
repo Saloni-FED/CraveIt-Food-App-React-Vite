@@ -10,11 +10,11 @@ import Error from "./Components/Error"
 import Contact from "./Components/Contact"
 import RestaurantMenu from "./Components/RestaurantMenu";
 import Profile from './Components/ProfileClass'
-// import Mart from "./Components/Mart"
+import FAQ from "./Components/FAQ";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 // Code Splitting 
-const Mart = lazy(() => import("./Components/Mart"));
+// const Mart = lazy(() => import("./Components/Mart"));
 
 
 
@@ -53,13 +53,17 @@ export const AppRouter = createBrowserRouter([
         path:"/restaurantMenu/:id",
         element:<RestaurantMenu/>
       },
+      // {
+      //   path:"/instamart",
+      //   element:(
+      //     <Suspense fallback={<h1>Wait for load.......</h1>}>
+      //       <Mart/>
+      //     </Suspense>
+      //   )
+      // },
       {
-        path:"/instamart",
-        element:(
-          <Suspense fallback={<h1>Wait for load.......</h1>}>
-            <Mart/>
-          </Suspense>
-        )
+        path:"/Faq",
+        element:<FAQ/>
       }
     ]
   },
