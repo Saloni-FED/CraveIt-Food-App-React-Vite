@@ -29,8 +29,11 @@ const HeaderComponent = () => {
               srcset=""
             />
           </li>
-          <li className="hover:font-bold">
+          {/* <li className="hover:font-bold">
             <Link to="/instamart">Mart</Link>
+          </li> */}
+          <li className="hover:font-bold">
+            <Link to="/Faq">FAQ</Link>
           </li>
         </ul>
         {isLogin ? (

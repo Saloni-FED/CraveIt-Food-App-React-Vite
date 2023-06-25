@@ -2,6 +2,7 @@ export const CDN_IMG_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lo
 export const RESTAURANT_LIST_URL = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.3667296&lng=72.819814&page_type=DESKTOP_WEB_LISTING"
 // export const RESTAURANT_LIST_URL = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.3667296&lng=72.819814&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING"
 export const RESTAURANT_MENU_URL = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=22.517929&lng=88.38341199999999&restaurantId=229";
+// Dummy data
 export const restaurantList = [
     {
       type: "restaurant",
@@ -484,3 +485,14 @@ export const restaurantList = [
       subtype: "basic",
     },
   ];
+  export const help = [
+    {
+      Question:"Does the app offer any special discounts or promotions?",
+      Answer:"Yes, we have an offer for our new customers who are signing up for our app for the first time. We also provide offers on special occasions such as Diwali, Holi, Republic Day, etc. We always look out for our customers' needs and try to make them happy."
+    },
+    {
+      Question:"Does the app offer any special discounts or promotions?",
+      Answer:"Yes, we have an offer for our new customers who are signing up for our app for the first time. We also provide offers on special occasions such as Diwali, Holi, Republic Day, etc. We always look out for our customers' needs and try to make them happy."
+    },
+    
+  ]
