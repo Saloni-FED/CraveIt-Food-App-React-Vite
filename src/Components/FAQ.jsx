@@ -5,14 +5,14 @@ const FAQ = (props) => {
 
   return (
     <div className="flex flex-col border border-black items-center">
-      <h1 className="text-lg font-bold border border-black">
+      <h1 className="text-lg font-bold border border-black inline">
         {props.section.Question}
       </h1>
       {
         props.isVisible === props.index ? (
           <div>
             <button
-              className="flex items-center border border-black"
+              className="flex items-center border border-black "
               onClick={() => {
                 props.setIsVisible(-1);
                 console.log(props.index)

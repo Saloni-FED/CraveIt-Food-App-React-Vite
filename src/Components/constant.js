@@ -491,8 +491,20 @@ export const restaurantList = [
       Answer:"Yes, we have an offer for our new customers who are signing up for our app for the first time. We also provide offers on special occasions such as Diwali, Holi, Republic Day, etc. We always look out for our customers' needs and try to make them happy."
     },
     {
-      Question:"Does the app offer any special discounts or promotions?",
-      Answer:"Yes, we have an offer for our new customers who are signing up for our app for the first time. We also provide offers on special occasions such as Diwali, Holi, Republic Day, etc. We always look out for our customers' needs and try to make them happy."
+      Question:"Can I track my delivery in real-time?",
+      Answer:"No, currently this functionality is not available in our app , but we will surely come with this feature soon in future"
+    },
+    {
+      Question:"How long does it typically take for a delivery to arrive?",
+      Answer:"Its Depend on the distance but hardly we managed to deliver your food with as minimum time as possible"
+    },
+    {
+      Question:"Can I filter the restaurants based on dietary preferences or restrictions (e.g., vegetarian, vegan, gluten-free)?",
+      Answer:"No, currently we have not have any filter option but will soon come with this Feature."
+    },
+    {
+      Question:"Is there a customer support hotline or chat available in case I have any issues or questions?",
+      Answer:"Yes, We have a Customer Support Number , 999-999-999 using this you can ask for Queries or any issues."
     },
     
   ]
