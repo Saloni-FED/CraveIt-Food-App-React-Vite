@@ -1,5 +1,14 @@
 import { CDN_IMG_URL } from "./constant";
+import { useDispatch } from "react-redux";
+import { addItem, deleteItem } from "../../utils/ReduxStore/cartSlice";
 const MenuCard = (props) => {
+  const dispatch = useDispatch();
+  const handleAddItems = (items)=>{
+    dispatch(addItem(items))
+  }
+  const handleDeleteItems = ()=>{
+    dispatch(deleteItem())
+  }
   return (
     <div className=" flex  p-11 justify-center hover-:bg-slate-600 ">
       {/* {console.log(element?.card?.info)} */}
@@ -18,9 +27,9 @@ const MenuCard = (props) => {
           src={CDN_IMG_URL + props.element?.card?.info?.imageId}
           alt=""
         />
-        <button className="inline bg-lime-500 font-white ml-40 ">-</button>
+        <button className="inline bg-lime-500 font-white ml-40 " onClick={()=>{console.log(props.element)}}>-</button>
         <button className="inline bg-lime-500 font-white  ">Add</button>
-        <button className="inline bg-lime-500 font-white  br">+</button>
+        <button className="inline bg-lime-500 font-white  br " onClick={()=>{handleAddItems(props.element)}}>+</button>
       </div>
     </div>
   );

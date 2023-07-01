@@ -5,14 +5,14 @@ import useRestaurant from "../../utils/useRestaurant";
 import MenuCard from "./MenuCard";
 const RestaurantMenu = () => {
   let params = useParams();
-  const [MenuRestaurant, DishName] = useRestaurant(params.id);
+  const [menuRestaurant, dishName] = useRestaurant(params.id);
 
-  return !MenuRestaurant || !DishName ? (
+  return  !dishName ? (
     <h1>Wait for a moment.....</h1>
   ) : (
     <div className="grid gap-2">
-      {DishName.map((RestaurantMenu, i) => {
-        return <MenuCard element={RestaurantMenu} />;
+      {dishName.map((menuItems, i) => {
+        return <MenuCard element={menuItems} />;
       })}
     </div>
   );
