@@ -27,10 +27,11 @@ const MenuCard = (props) => {
           src={CDN_IMG_URL + props.element?.card?.info?.imageId}
           alt=""
         />
-        <button className="inline bg-lime-500 font-white ml-40 " onClick={()=>{console.log(props.element)}}>-</button>
+        <button className="inline bg-lime-500 font-white ml-40 " onClick={()=>{console.log(props.element.card.info)}}>-</button>
         <button className="inline bg-lime-500 font-white  ">Add</button>
-        <button className="inline bg-lime-500 font-white  br " onClick={()=>{handleAddItems(props.element)}}>+</button>
+        <button className="inline bg-lime-500 font-white  br " onClick={()=>{handleAddItems(props.element.card.info)}}>+</button>
       </div>
+      {/* {console.log(props.element.info)} */}
     </div>
   );
 };
