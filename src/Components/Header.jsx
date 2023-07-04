@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 const HeaderComponent = () => {
-  const carts = useSelector((store) => store.cartItems.items);
-  console.log(carts);
+  const cartItems = useSelector((store) => store.cartItems.items);
+  // console.log(cartItems[0].quantity);
   return (
     <>
       <div className="flex bg-black text-lg text-white justify-between shadow-xl border-box">
@@ -27,7 +27,9 @@ const HeaderComponent = () => {
                 alt="cart"
                 srcset=""
               />
-              {" " + carts.length}
+             {
+              cartItems.reduce((previous,current)=> previous + current.quantity, 0)
+             }
             </Link>
           </li>
           <li className="hover:font-bold">
