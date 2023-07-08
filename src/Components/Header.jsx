@@ -6,9 +6,9 @@ const HeaderComponent = () => {
   // console.log(cartItems[0].quantity);
   return (
     <>
-      <div className="flex bg-black text-lg text-white justify-between shadow-xl border-box">
-        <img className="w-44 h-20 ml-40 py-2" src="./public/Food logo.png" />
-        <ul className="flex mt-5 justify-around pr-50">
+      <div className="flex bg-black text-lg text-white justify-between shadow-xl border-box" >
+        <img  className="w-44 h-20 ml-40 py-2" src="./public/Food logo.png" data-testid="logo"/>
+        <ul data-testid="ul" className="flex mt-5 justify-around pr-50">
           <li className="mr-6 hover:font-bold">
             <Link to="/">Home</Link>
           </li>

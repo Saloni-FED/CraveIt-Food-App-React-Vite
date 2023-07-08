@@ -19,6 +19,7 @@ const Body = () => {
     <>
       <div className="flex justify-center py-11  bg-slate-100   ">
         <input
+          data-testid="search-input"
           className="w-96 p-2 pl-5 shadow-lg bg-white border-none outline-none"
           type="text"
           placeholder="search"
@@ -28,7 +29,7 @@ const Body = () => {
           }}
         />
         <button
-          type="search"
+          type="search" data-testid="search-btn"
           onClick={() => {
             let data = useFilterData(searchText, restaurants);
             console.log(data);
@@ -41,7 +42,7 @@ const Body = () => {
       {filterRestaurant.length == 0 ? (
         <h1>Oops Sorry Match Not found</h1>
       ) : (
-        <div className="grid grid-cols-5 gap-y-4">
+        <div className="grid grid-cols-5 gap-y-4" data-testid = "res">
           {filterRestaurant.map((restro) => {
             return (
               <Link

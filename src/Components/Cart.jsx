@@ -30,4 +30,4 @@ const Cart = () => {
 };
 export default Cart;
 
-// {console.log(cart)
+
