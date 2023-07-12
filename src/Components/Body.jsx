@@ -11,6 +11,7 @@ const Body = () => {
   const [filterRestaurant, setFilterRestaurants] = useState([]);
   useEffect(() => {
     setFilterRestaurants(restaurants);
+    // console.log(filterRestaurant)
   }, [restaurants]);
 
   return restaurants?.length == 0 ? (
@@ -40,7 +41,7 @@ const Body = () => {
         </button>
       </div>
       {filterRestaurant.length == 0 ? (
-        <h1>Oops Sorry Match Not found</h1>
+        <h1 className="text-center font-medium">Oops Sorry Match Not found</h1>
       ) : (
         <div className="grid grid-cols-5 gap-y-4" data-testid = "res">
           {filterRestaurant.map((restro) => {

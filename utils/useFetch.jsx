@@ -9,7 +9,8 @@ const useFetch = () => {
   async function restaurantsAPI() {
     const api = await fetch(RESTAURANT_LIST_URL);
     const data = await api.json();
-    console.log(data?.data?.cards[2]?.data?.data?.cards[0]?.data)
+    // console.log(data?.data)
+    // console.log(data?.data?.cards[2]?.data?.data?.cards[0]?.data)
     setRestaurants(data?.data?.cards[2]?.data?.data.cards);
 
   }
