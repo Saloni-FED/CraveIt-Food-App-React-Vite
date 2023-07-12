@@ -5,7 +5,7 @@ const useFilterData = (searchText, restaurants) => {
     return restaurants;
   } else {
     const restaurantFilter = restaurants.filter((restaurant) => {
-      return restaurant.data.name
+      return restaurant.data.data.name
         .toUpperCase()
         .includes(searchText.toUpperCase());
     });

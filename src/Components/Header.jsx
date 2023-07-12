@@ -15,12 +15,11 @@ const HeaderComponent = () => {
             <Link to="/about"><FaInfoCircle className="text-2xl hover:text-lime-500"/></Link>
           </li>
           <li className="mr-6 hover:font-bold">
-  
-            <Link to="/cart">
+            <Link to="/cart" className="flex gap-2">
               <FaShoppingCart className="text-2xl hover:text-lime-500 "/>
-             {
+             <span>{
               cartItems.reduce((previous,current)=> previous + current.quantity, 0)
-             }
+             }</span>
             </Link>
           </li>
           <li className=" pr-11">

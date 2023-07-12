@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { RESTAURANT_LIST_URL } from "../src/Components/constant";
+
 const useFetch = () => {
   let [restaurants, setRestaurants] = useState([]);
   // let [isRestaurant, setIsRestaurants] = useState(false);
@@ -7,11 +7,12 @@ const useFetch = () => {
     restaurantsAPI();
   }, []);
   async function restaurantsAPI() {
-    const api = await fetch(RESTAURANT_LIST_URL);
+    const api = await fetch(`${import.meta.env.VITE_API_URL}/restaurants?offset=0`);
     const data = await api.json();
-    // console.log(data?.data)
+    console.log(data?.data.cards) 
+    const restaurants = data?.data?.cards.filter(card => card.cardType === "restaurant") 
     // console.log(data?.data?.cards[2]?.data?.data?.cards[0]?.data)
-    setRestaurants(data?.data?.cards[2]?.data?.data.cards);
+    setRestaurants(restaurants);
 
   }
   return { restaurants };
