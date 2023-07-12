@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Logo from "../../public/food_logo.png";
 import { FaHome, FaShoppingCart, FaInfoCircle, FaQuestionCircle } from 'react-icons/fa'
 import { useSelector } from "react-redux";
 const HeaderComponent = () => {
@@ -6,7 +7,7 @@ const HeaderComponent = () => {
   return (
     <>
       <div className="flex bg-black text-lg text-white justify-between shadow-xl border-box" >
-        <img  className="w-44 h-20 ml-40 py-2" src="./public/Food logo.png" data-testid="logo"/>
+        <img  className="w-44 h-20 ml-40 py-2" src={Logo} data-testid="logo"/>
         <ul data-testid="ul" className="flex mt-5 justify-around pr-50">
           <li className="mr-6 hover:font-bold">
             <Link to="/"><FaHome className="text-2xl hover:text-lime-300"/></Link>
