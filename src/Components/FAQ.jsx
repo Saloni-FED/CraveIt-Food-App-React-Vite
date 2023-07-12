@@ -1,31 +1,30 @@
 import { useState } from "react";
 import { help } from "./constant";
-
+import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai"
 const FAQ = (props) => {
   return (
     <div className="flex flex-col items-center mt-5 hover:shadow-lg box-border ">
       <div className="flex items-center justify-center w-full">
-        <h1 className="text-md font-bold inline w-96 text-center">
+        <h1 className="text-md font-md inline w-96 text-center">
           {props.section.Question}
         </h1>
         {props.isVisible === props.index ? (
-          <button
-            className="flex items-center  ml-2"
+          <AiFillCaretUp 
+            className="flex items-center  ml-5"
             onClick={() => {
               props.setIsVisible(-1);
             }}
           >
-            ^
-          </button>
+            
+          </AiFillCaretUp >
         ) : (
-          <button
-            className="flex items-center border border-black ml-2"
+          <AiFillCaretDown
+            className="flex items-center ml-5"
             onClick={() => {
               props.setIsVisible(props.index);
             }}
           >
-            Show
-          </button>
+          </AiFillCaretDown>
         )}
       </div>
       <p

@@ -6,7 +6,6 @@ import "./App.css";
 import React from "react";
 import About from "../src/Components/About";
 import Error from "./Components/Error";
-import Contact from "./Components/Contact";
 import RestaurantMenu from "./Components/RestaurantMenu";
 // import FAQ from "./Components/FAQ";
 import Cart from "./Components/Cart";
@@ -41,10 +40,6 @@ export const AppRouter = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
-      },
-      {
-        path: "/contact",
-        element: <Contact />,
       },
       {
         path: "/restaurantMenu/:id",

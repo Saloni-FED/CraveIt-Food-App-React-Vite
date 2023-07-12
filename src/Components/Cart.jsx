@@ -7,7 +7,7 @@ const Cart = () => {
   // console.log(cartItems.quantity);
   return cartItems.length === 0 ? (
     <h1 className="flex justify-center font-bold text-lg mt-11">
-      <Link to="/">Click Here to Check the Restaurant </Link>
+      <Link to="/">Click Here to Check the Restaurant</Link>
     </h1>
   ) : (
     <div className="cart">
