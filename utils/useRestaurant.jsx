@@ -9,10 +9,10 @@ const useRestaurant = (id)=>{
     async function menuList(){
     let menuData = await fetch(`${import.meta.env.VITE_API_URL}/menu?id=${id}`)
     let menuList  = await menuData.json();
-    //  console.log(menuList?.data?.cards[2].groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards)
-    //  console.log(menuList?.data?.cards[0]?.card?.card?.info)
+     console.log(menuList)
+     console.log(menuList?.data?.cards[0]?.card?.card?.info)
      setMenuRestaurant(menuList?.data?.cards[0]?.card?.card?.info)
-    //  console.log(menuList?.data?.cards[2].groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards)
+     console.log(menuList?.data?.cards[2].groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards)
      setDishName(menuList?.data?.cards[2].groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards)
     }
     

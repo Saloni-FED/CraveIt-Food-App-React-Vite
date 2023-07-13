@@ -12,7 +12,7 @@ const Body = () => {
   console.log(restaurants);
 
   return restaurants?.length == 0 ? (
-    <h1>Wait for a Moment......</h1>
+    <h1 className="flex justify-center mt-11">Wait for a Moment......</h1>
   ) : (
     <>
       <div className="flex justify-center py-11  bg-slate-100   ">
