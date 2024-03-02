@@ -1,6 +1,6 @@
 # CraveIt - Ultimate Food Ordering App 🍔🌯
 
-CraveIt(My first React Project), is a dynamic food website developed using React. To enhance the user experience and manage data effectively, CraveIt utilizes Redux. By leveraging Redux's state management capabilities, the website ensures smooth data flow and allows for efficient handling of props drilling.
+CraveIt is a dynamic food website developed using ReactJS. To enhance the user experience and manage data effectively, CraveIt utilizes Redux. By leveraging Redux's state management capabilities, the website ensures smooth data flow and allows for efficient handling of props drilling.
 
 ## Demo
 
