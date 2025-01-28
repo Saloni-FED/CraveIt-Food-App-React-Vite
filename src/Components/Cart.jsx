@@ -11,7 +11,7 @@ const Cart = () => {
     </h1>
   ) : (
     <div className="cart">
-      <div className="flex pl-40 space-x-56">
+      <div className="flex pl-35 space-x-56">
         <h1 className="font-bold">Items</h1>
         <h1 className="font-bold pl-5">Price</h1>
         <h1 className="font-bold pl-5">Quantity</h1>
